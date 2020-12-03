@@ -257,6 +257,16 @@ Repositório para salvar códigos de PLP
   
       *  [Vídeo-aula Paradigma Imperativo : Variáveis e Tipos de Dados](https://www.youtube.com/watch?v=ixgq1igka04&list=PLhBit65YoreOHcv9evI-uEXJUUeR3wOEM&index=4&ab_channel=ERICKGALANIMAZIERO)
       * [Slide Variáveis e tipos de dados](https://drive.google.com/file/d/16eCZZyFb7y4OKCbyoKi-tf8mOBlD2284/view?usp=sharing)
+
+      ```Python
+      my_string = 'Hello, World!'
+      my_flt = 45.06
+      my_bool = 5 > 9
+      my_list = ['item1','item2']
+      my_tuple = ('item1','item2')
+      my_dict = {'letter':'g','number':7}
+      ```
+
   * <b><a name="aula03">Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo</a></b>
   * <b><a name="aula04">Paradigma Imperativo : Subprogramas</a></b>
 
