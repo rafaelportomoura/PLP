@@ -80,7 +80,15 @@ Repositório para salvar códigos de PLP
 <a name="reo2Aulas">Aulas</a>
 <!--ts-->
   * <a name="aula01">Videoaula de introdução ao Python: GCC198</a>
-    * Conditionals
+  
+    * [Conditionals](#aula01Conditionals)
+    * [Interations](#aula01Interations)
+    * [Exceptions](#aula01Exceptions)
+    * [Files](#aula01Files)
+    #
+
+    * <a name="aula01Conditionals">Conditionals</a>
+
       ```Python
       valor = input("Digite um valor")
       valor = int(valor)
@@ -111,12 +119,68 @@ Repositório para salvar códigos de PLP
       ```
       > <p>Digite um número 2</p>par
 
-    * Interations
+    * <a name="aula01Interations">Interations</a>
+
       ```Python
       for i in range(10):
         print(i)
       ```
-      ><p>1<p>2<p>3<p>4<p>5<p>6<p>7<p>8<p>9
+      >0<p>1<p>2<p>3<p>4<p>5<p>6<p>7<p>8<p>9
+
+      ```Python
+      for i in range(5,10):
+        print(i)
+      ```
+      >5<p>6<p>7<p>8<p>9
+      
+      ```Python
+      blacklist = ["palavrão","palavrona","palavreadão"]
+      for palavra in blacklist:
+        print("Palavra proibida: {}".format(palavra))
+      ```
+      >Palavra proibida: palavrão<p>Palavra proibida: palavrona<p>Palavra proibida: pavreadão
+      
+      ```Python
+      blacklist = ["palavrão","palavrona","palavreadão"]
+      texto = input("Digite uma frase: ")
+      palavras = texto.split()
+      for palavra in palavras:
+        if palavra.lower() in blacklist:
+          print("A palavra {} é proibida!".format(palavra))
+      ```
+      >Digite uma frase: Oi, palavrão tal<p>A palavra palavrão é proibida!
+    
+    * <a names="aula01Exceptions">Exceptions</a>
+
+      ```Python
+      try:
+        valor = int(input("Digite um número"))
+        if valor == 0:
+          print('Zero!')
+        elif valor % 2 == 0:
+          print('Número par')
+        else:
+          print('Número ímpar')
+      except:
+        print('Valor digitado não é um número!')
+      ```
+      >Digite um número a<p>Valor digitado não é um número!
+
+    * <a name="aula01Files">Files</a> 
+
+      ```Python
+      try:
+        valor = int(input("Digite um número"))
+        if valor == 0:
+          print('Zero!')
+        elif valor % 2 == 0:
+          print('Número par')
+        else:
+          print('Número ímpar')
+      except:
+        print('Valor digitado não é um número!')
+      ```
+      >Digite um número a<p>Valor digitado não é um número!
   * <a name="aula02">Paradigma Imperativo : Variáveis e Tipos de Dados</a>
   * <a name="aula03">Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo</a>
   * <a name="aula04">Paradigma Imperativo : Subprogramas</a>
