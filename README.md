@@ -26,11 +26,15 @@ Repositório para salvar códigos de PLP
     * Windows
       ```cmd
       py -3 -m venv venv
+      //NO VENV
+      pip install wheel
       ```
     * Linux e Mac
       ```bash
       python3 -m venv venv
+      //NO VENV
       venv/bin/activate 
+      pip install wheel
       deactivate
       ```
   * <a name = "extensoesParaVsCodePython">Extensões para VSCode: </a>
