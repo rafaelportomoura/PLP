@@ -14,10 +14,10 @@ Repositório para salvar códigos de PLP
     * [Extensões para VsCode](#extensoesParaVsCodePython)
     * [settings.json](#settings.jsonPython)
   * [Aulas](#reo2Aulas)
-    * [Videoaula de introdução ao Python: GCC198](#aula01)
-    * [Paradigma Imperativo : Variáveis e Tipos de Dados](#aula02)
-    * [Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo](#aula03)
-    * [Paradigma Imperativo : Subprogramas](#aula04)
+    * [][Videoaula de introdução ao Python: GCC198](#aula01)
+    * [][Paradigma Imperativo : Variáveis e Tipos de Dados](#aula02)
+    * [][Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo](#aula03)
+    * [][Paradigma Imperativo : Subprogramas](#aula04)
 <!--te-->
 
 <a name="reo2Configurações">Configurações</a>
