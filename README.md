@@ -14,10 +14,10 @@ Repositório para salvar códigos de PLP
     * [Extensões para VsCode](#extensoesParaVsCodePython)
     * [settings.json](#settings.jsonPython)
   * [Aulas](#reo2Aulas)
-    * [][Videoaula de introdução ao Python: GCC198](#aula01)
-    * [][Paradigma Imperativo : Variáveis e Tipos de Dados](#aula02)
-    * [][Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo](#aula03)
-    * [][Paradigma Imperativo : Subprogramas](#aula04)
+    * [Videoaula de introdução ao Python: GCC198](#aula01)
+    * [Paradigma Imperativo : Variáveis e Tipos de Dados](#aula02)
+    * [Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo](#aula03)
+    * [Paradigma Imperativo : Subprogramas](#aula04)
 <!--te-->
 
 <a name="reo2Configurações">Configurações</a>
@@ -88,7 +88,10 @@ Repositório para salvar códigos de PLP
     * [CommandArguments](#aula01CommandArguments)
     * [Extras](#aula01Extras)
     #
+
     * <b><a name="aula01Conditionals">Conditionals</a></b>
+
+      *  [Vídeo-aula de introdução ao Python : GCC198](https://www.youtube.com/watch?v=zyCu32zRPFw&list=PLhBit65YoreOHcv9evI-uEXJUUeR3wOEM&index=3&ab_channel=ERICKGALANIMAZIERO)
 
       ```Python
       valor = input("Digite um valor")
@@ -268,6 +271,20 @@ Repositório para salvar códigos de PLP
       ```
 
   * <b><a name="aula03">Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo</a></b>
+  
+      *  [Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo](https://www.youtube.com/watch?v=SXqOHgvQBfo&list=PLhBit65YoreOHcv9evI-uEXJUUeR3wOEM&index=5&ab_channel=ERICKGALANIMAZIERO)
+      
+      * [Avaliações de expressões e controle de fluxo](https://drive.google.com/file/d/1_ohN2hIh6nSqq-Pyl2W7fvFvajyrUAhW/view?usp=sharing)
+
   * <b><a name="aula04">Paradigma Imperativo : Subprogramas</a></b>
+
+      *  [Paradigma Imperativo : Subprogramas](https://www.youtube.com/watch?v=IBVEJx5Hfzo&list=PLhBit65YoreOHcv9evI-uEXJUUeR3wOEM&index=6&ab_channel=ERICKGALANIMAZIERO)
+      
+      * [Subprogramas](https://drive.google.com/file/d/1SuvBqQdD7KhYc7GiGW8z6nM0ef3hLZcL/view?usp=sharing)
+
+      ```Python
+      def subprograma(a,b,c):
+        print(a + b + c)
+      ```
 
 <!--te-->
