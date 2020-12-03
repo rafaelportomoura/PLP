@@ -80,7 +80,7 @@ Repositório para salvar códigos de PLP
 <a name="reo2Aulas">Aulas</a>
 <!--ts-->
   * <a name="aula01">Videoaula de introdução ao Python: GCC198</a>
-  
+
     * [Conditionals](#aula01Conditionals)
     * [Interations](#aula01Interations)
     * [Exceptions](#aula01Exceptions)
@@ -167,20 +167,44 @@ Repositório para salvar códigos de PLP
       >Digite um número a<p>Valor digitado não é um número!
 
     * <a name="aula01Files">Files</a> 
+      <p>dataset.csv : 
+        <p>7,8,9<p>3,4,5<p>2,4,1<p>90,89,20<p>8,4,12
 
       ```Python
-      try:
-        valor = int(input("Digite um número"))
-        if valor == 0:
-          print('Zero!')
-        elif valor % 2 == 0:
-          print('Número par')
-        else:
-          print('Número ímpar')
-      except:
-        print('Valor digitado não é um número!')
+      xs = []
+      ys = []
+      zs = []
+      with open('dataset.csv','r') as file:
+        lines = file.readlines()
+        for line in lines:
+          x, y, z = line.split(',')
+          xs.append(x)
+          ys.append(y)
+          zs.append(z)
+      
+      print(xs)
+      print(ys)
+      print(zs)
       ```
-      >Digite um número a<p>Valor digitado não é um número!
+      >['7', '3', '2', '90', '8']<p>['8', '4', '4', '89', '4']<p>['9\n', '5\n', '1\n', '20\n', '12']
+      
+      ```Python
+      xs = []
+      ys = []
+      zs = []
+      with open('dataset.csv','r') as file:
+        lines = file.readlines()
+        for line in lines:
+          x, y, z = line.split(',')
+          xs.append(x)
+          ys.append(y)
+          zs.append(z.strip())
+      
+      print(xs)
+      print(ys)
+      print(zs)
+      ```
+      >['7', '3', '2', '90', '8']<p>['8', '4', '4', '89', '4']<p>['9', '5', '1', '20', '12']
   * <a name="aula02">Paradigma Imperativo : Variáveis e Tipos de Dados</a>
   * <a name="aula03">Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo</a>
   * <a name="aula04">Paradigma Imperativo : Subprogramas</a>
