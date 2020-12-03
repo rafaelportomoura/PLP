@@ -303,9 +303,11 @@ Repositório para salvar códigos de PLP
 <!--te-->
 <a name="reo2AtividadeAvaliativa">Atividade Avaliativa</a>
 <!--ts-->
+  * Sobre
+    * Programa pra rodar o coeficiente da correlação de Pearson
   * Rodar
   
       ```cmd
-      py -3 nome.py nome.txt
+      py -3 atividade_avaliativa_Rafael_Porto_reo2 teste.txt
       ```
 <!--te-->
