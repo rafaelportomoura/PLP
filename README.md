@@ -79,15 +79,16 @@ Repositório para salvar códigos de PLP
    
 <a name="reo2Aulas">Aulas</a>
 <!--ts-->
-  * <a name="aula01">Videoaula de introdução ao Python: GCC198</a>
+  * <b><a name="aula01">Videoaula de introdução ao Python: GCC198</a></b>
 
     * [Conditionals](#aula01Conditionals)
     * [Interations](#aula01Interations)
     * [Exceptions](#aula01Exceptions)
     * [Files](#aula01Files)
+    * [CommandArguments](#aula01CommandArguments)
+    * [Extras](#aula01Extras)
     #
-
-    * <a name="aula01Conditionals">Conditionals</a>
+    * <b><a name="aula01Conditionals">Conditionals</a></b>
 
       ```Python
       valor = input("Digite um valor")
@@ -119,7 +120,7 @@ Repositório para salvar códigos de PLP
       ```
       > <p>Digite um número 2</p>par
 
-    * <a name="aula01Interations">Interations</a>
+    * <b><a name="aula01Interations">Interations</a></b>
 
       ```Python
       for i in range(10):
@@ -150,7 +151,7 @@ Repositório para salvar códigos de PLP
       ```
       >Digite uma frase: Oi, palavrão tal<p>A palavra palavrão é proibida!
     
-    * <a names="aula01Exceptions">Exceptions</a>
+    * <b><a names="aula01Exceptions">Exceptions</a></b>
 
       ```Python
       try:
@@ -166,7 +167,7 @@ Repositório para salvar códigos de PLP
       ```
       >Digite um número a<p>Valor digitado não é um número!
 
-    * <a name="aula01Files">Files</a> 
+    * <b><a name="aula01Files">Files</a></b>
       <p>dataset.csv : 
         <p>7,8,9<p>3,4,5<p>2,4,1<p>90,89,20<p>8,4,12
 
@@ -205,8 +206,58 @@ Repositório para salvar códigos de PLP
       print(zs)
       ```
       >['7', '3', '2', '90', '8']<p>['8', '4', '4', '89', '4']<p>['9', '5', '1', '20', '12']
-  * <a name="aula02">Paradigma Imperativo : Variáveis e Tipos de Dados</a>
-  * <a name="aula03">Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo</a>
-  * <a name="aula04">Paradigma Imperativo : Subprogramas</a>
+
+    * <b><a name="aula01CommandArguments">Command Arguments</a></b>
+      * python_example1.py 
+        
+        ```Python
+        import sys
+
+        caminho_do_arquivo = sys.argv[1] #o sys.argv[0] é o nome do próprio arquivo python
+
+        xs = []
+        ys = []
+        zs = []
+
+        with open(caminho_do_arquivo,  'r') as file:
+          lines = file.readlines()
+          for line in lines:
+            x, y, z = line.split(', ')
+            xs.append(x)
+            ys.append(y)
+            zs.append(z.strip())
+
+        print(xs)
+        print(ys)
+        print(zs)
+        ```
+      * A chamada é feita por terminal de comando<p>python3 python_example1.py dataset.csv
+        >['7', '3', '2', '90', '8']<p>['8', '4', '4', '89', '4']<p>['9', '5', '1', '20', '12']
+
+    * <b><a name="aula01Extras">Extras</a></b>
+    
+      ```Python
+      numeros = [1, 10, 100, 1000, 2, 20, 200]
+      print(sum(numeros))
+      print(max(numeros))
+      print(min(numeros))
+      ```
+      >1333<p>1000<p>1
+
+      
+      ```Python
+      numeros = [1, 10, 100, 1000, 2, 20, 200]
+      print("Média da lista", sum(numeros)/len(numeros))
+      ```
+      >190.42857142857142
+
+
+
+  * <b><a name="aula02">Paradigma Imperativo : Variáveis e Tipos de Dados</a></b>
+  
+      *  [Vídeo-aula Paradigma Imperativo : Variáveis e Tipos de Dados](https://www.youtube.com/watch?v=ixgq1igka04&list=PLhBit65YoreOHcv9evI-uEXJUUeR3wOEM&index=4&ab_channel=ERICKGALANIMAZIERO)
+      * [Slide Variáveis e tipos de dados](https://drive.google.com/file/d/16eCZZyFb7y4OKCbyoKi-tf8mOBlD2284/view?usp=sharing)
+  * <b><a name="aula03">Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo</a></b>
+  * <b><a name="aula04">Paradigma Imperativo : Subprogramas</a></b>
 
 <!--te-->
