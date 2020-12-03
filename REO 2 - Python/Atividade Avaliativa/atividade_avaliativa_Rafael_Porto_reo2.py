@@ -5,14 +5,6 @@ arquivo = sys.argv[1]
 xs = []
 ys = []
 
-with open(arquivo, 'r') as file:
-    linhas = file.readlines()
-    for linha in linhas:
-        x, y = linha.split(',')
-
-        xs.append(float(x))
-        ys.append(float(y.strip()))
-
 
 def somatorio(num, tam):
     soma = 0
@@ -50,4 +42,25 @@ def Pearson(x, y):
     return denominador(x, y) / numerador(x, y)
 
 
-print(Pearson(xs, ys))
+try:
+    with open(arquivo, 'r') as file:
+        linhas = file.readlines()
+        teste = linhas[0].split
+        for linha in linhas:
+            w, z = linha.split(',')
+            z = z.strip()
+            x = float(w)
+            y = float(z)
+            xs.append(x)
+            ys.append(y)
+        print(Pearson(xs, ys))
+except (ValueError, FloatingPointError):
+    print("O valor informado não é um valor do tipo float!")
+except ZeroDivisionError:
+    print("Esta acontecendo divisão por 0!")
+except FileNotFoundError:
+    print("O arquivo texto informado não pode ser encontrado!")
+except FileExistsError:
+    print("O arquivo não existe!")
+except IndexError:
+    print("O arquivo está vazio!")
