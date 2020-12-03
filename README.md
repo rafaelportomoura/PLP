@@ -286,14 +286,14 @@ Repositório para salvar códigos de PLP
       def subprograma(a,b,c):
         print(a + b + c)
       ```
-        * Recursao
+      * Recursao
         
-        ```Python
-        def fatorial(n):
-          if (n <= 1):
-            return 1
-          else: 
-            return (n * fatorial(n-1))
-        ```
+      ```Python
+      def fatorial(n):
+        if (n <= 1):
+          return 1
+        else: 
+          return (n * fatorial(n-1))
+      ```
 
 <!--te-->
