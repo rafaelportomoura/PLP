@@ -18,6 +18,7 @@ Repositório para salvar códigos de PLP
     * [Paradigma Imperativo : Variáveis e Tipos de Dados](#aula02)
     * [Paradigma Imperativo : Avaliação de Expressões e Controle de Fluxo](#aula03)
     * [Paradigma Imperativo : Subprogramas](#aula04)
+  * [Atividade Avaliativa](#reo2AtividadeAvaliativa)
 <!--te-->
 
 <a name="reo2Configurações">Configurações</a>
@@ -299,5 +300,12 @@ Repositório para salvar códigos de PLP
         else: 
           return (n * fatorial(n-1))
       ```
-
+<!--te-->
+<a name="reo2AtividadeAvaliativa">Atividade Avaliativa</a>
+<!--ts-->
+  * Rodar
+  
+      ```cmd
+      py -3 nome.py nome.txt
+      ```
 <!--te-->
