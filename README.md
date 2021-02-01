@@ -4,10 +4,11 @@ Repositório para salvar códigos de PLP
 
 ## 📝 REOs
 
-- [REO 2 - Python](#python)
+- [REO 2 - Paradigma Imperativo](#paradigmaimperativo)
+- [REO 3 - Paradigma Orientado a Objetos](#paradigmaOrientadoAObjetos)
 
 
-## <h1><a name = "python">🐍 Reo 2 - Python</a></h1> 
+## <h1><a name = "paradigmaimperativo">🐍 Reo 2 - Paradigma Imperativo</a></h1> 
 <!--ts-->
   * [Configurações](#reo2Configurações)
     * [Ambiente virtual](#ambienteVirtualPython)
@@ -311,3 +312,195 @@ Repositório para salvar códigos de PLP
       py -3 atividade_avaliativa_Rafael_Porto_reo2 teste.txt
       ```
 <!--te-->
+
+# <a name="paradigmaOrientadoAObjetos"></a> 🐍 Reo 3 - Paradigma Orientado a Objetos
+
+* ### Aulas
+  * #### [Paradigma Orientado a Objetos : Conceitos iniciais](#reo3aula1)
+  * #### [Paradigma Orientado a Objetos : Encapsulamento](#reo3aula2)
+  * #### [Paradigma Orientado a Objetos : Herança e Composição](#reo3aula3)
+  * #### [Paradigma Orientado a Objetos : Polimorfismo](#reo3aula4)
+
+* ### [Python](#reo3Python)
+
+* ### [Atividade Avaliativa](#reo3atividadeAvaliativa)
+
+
+## <a name="reo3aula1"></a> **Paradigma Orientado a Objetos : Conceitos iniciais**
+
+
+[Video Aula](https://youtu.be/lIp_sSmD3hg)
+
+### **Conjunto de princípios**
+ * Orientam a criação de sistemas computacionais, objetos que interagem entre si.  
+
+Em termos de LPs, conceitos formais surgem com Simula 67, sendo consolidados com Smalltalk (primeira linguagem orientada a objetos).  
+
+Popularizado com a difusão de interfaces gráficas de usuários (GUIs)
+ * Surgimento de ferramentas com suporte para desenvolvimento de aplicações gráficas (C++, FoxPro, Delphi). 
+
+Suportado por várias linguagens (ex: Python, Ruby, C#)
+ * Atualmente sua maior expressão comercial é dada pelo Java
+
+### **Pilares da OO**
+
+Conceitos fundamentais (pilares) que norteiam o desenvolvimento OO:
+ * Abstração;
+ * Encapsulamento;
+ * Herança;
+ * Polimorfismo.
+
+### **Abstração**
+Representação de uma entidade do mundo real, com seu comportamento e características.  
+"Modelos Mentais"
+ * Classes;
+ * Objetos;
+ * Métodos;
+ * Atributos;
+
+**Classes**: 
+Uma classe pode ser entendida como um módulo ou uma estrutura de dados abstrata.  
+Uma visão mais ampla pode levar à seguinte definição:  
+ * Uma classe é um tipo abstrato de dados, que reúne objetos com características similares.
+ * O comportamento destes objetos é descrito pelo conjunto de métodos disponíveis.
+ * O conjunto de atributos da classe descrevem as características de um objeto.
+
+![Classes](img/classesReo3.png)
+
+**********
+
+**Objetos**:  
+Um objeto pode ser entendido como um ser, lugar, evento, coisa ou conceito do mundo real que possa ser aplicável a um sistema.  
+É comum que haja objetos diferentes com características semelhantes. Esses objetos são agrupados em classes.  
+Classes são um agrupamento de objetos com características similares!  
+Objetos são entidades (instâncias) únicas de uma classe!
+
+![Objetos](img/objetosReo3.png)
+
+************
+
+**Atributos**:  
+Um atributo é uma característica de um grupo de entidades do mundo real, agrupados em uma classe.  
+Um atributo pode ser um valor simples (um inteiro, por exemplo) ou estruturas complexas (um outro objeto, por exemplo).  
+
+![Atributos](img/atributosReo3.png)
+
+Atributos de classe  
+ * Em geral, os atributos pertencem a cada objeto instanciado, ou seja, a cada novo instanciação de uma mesma classe, cada instância pode ter valores distintos para cada atributo.
+ * Atributos de classe são definidos para terem o mesmo valor para todas as instâncias de uma classe.
+
+![Atributos de classe](img/atributosDeClasseReo3.png)
+
+***************
+
+**Métodos**  
+Semelhante a uma função, é a implementação de uma ação da entidade representada pela classe;  
+Conjunto de métodos define o comportamento dos objetos de uma classe.  
+
+![Métodos](img/MétodosReo3.png)
+
+******************
+
+**Construtores**  
+É um método especial para a criação e inicialização de uma nova instância de uma classe.  
+Um construtor inicializa um objeto e suas variáveis, cria quaisquer outros objetos de que ele precise, garantindo que ele seja configurado corretamente quando criado.  
+Na maioria das LPs, o construtor é um método que tem o mesmo nome da classe, que geralmente é chamado quando um objeto da classe é declarado ou instanciado.  
+
+![Construtores](img/ConstrutoresReo3.png)
+![Construtores](img/Construtores2Reo3.png)
+
+****************
+
+**Destrutores**  
+De forma similar aos construtores, os destrutores são métodos fundamentais das classes, sendo geralmente chamados quando termina o tempo de vida do objeto.  
+Em algumas linguagens como C++, ocupam um papel tão importante quanto os construtores, por conta da necessidade de desalocação de memória.  
+Em outras linguagens como Java, o Garbage Collector (Coletor Automático de Lixo) faz esse papel, desalocando aquilo que não é mais utilizado. Há o método `finalize()`, mas raramente é utilizado (há dúvidas se sempre funciona, inclusive).  
+Tanto os construtores, quanto os destrutores são métodos que não precisam ser definidos em Orientação a Objetos em Python, caso o comportamento esperado seja o padrão.  
+Geralmente, define-se o construtor para a passagem de argumentos na criação do objeto. Já o destrutor não se costuma definir.  
+Caso seja necessário realizar algum procedimento na destruição do objeto, define-se o método destrutor, como será exemplificado.  
+
+![Destrutores](img/DestrutoresReo3.png)
+![Destrutores](img/Destrutores2Reo3.png)
+
+Garbage Collection em Java  
+ * Em C++ a memória é alocada e desalocada explicitamente
+ * Java possui gerenciamento automático de memória, realizado pela JVM  
+   * Evita vazamento de memória e bugs de ponteiros 
+   * Consome recursos computacionais quanto à decisão de desalocação
+   * É um processo "não determinístico"
+
+****
+
+## <a name="reo3aula2"></a> **Paradigma Orientado a Objetos : Encapsulamento**  
+[Video Aula](https://youtu.be/thvtKowe85E)  
+
+
+
+****
+
+## <a name="reo3aula3"></a> **Paradigma Orientado a Objetos : Herança e Composição**
+
+****
+
+## <a name="reo3aula4"></a> **Paradigma Orientado a Objetos : Polimorfismo**
+
+****
+
+## <a name="reo3Python"></a> **Paradigma Orientado a Objetos : Python**
+
+Conceitos Iniciais: 
+
+Definição de classe:   
+```Python
+class Pessoa: 
+  def __init__(self,cpf,nome): 
+    self.cpf = cpf
+    self.nome = nome
+```
+Objetos: 
+```Python
+p1 = Pessoa('123.456.789-10', 'João da Silva')
+```
+Atributos são o `self.cpf` e `self.nome`  
+Atributos de classe nesse exemplo seria o `__total_pessoas`  
+```Python
+class Pessoa: 
+  __total_pessoas = 0
+  def __init__(self,cpf,nome): 
+    self.cpf = cpf
+    self.nome = nome
+    Pessoa.__total_pessoas += 1
+  def get_total_pessoas(self): 
+    return Pessoa.__total_pessoas
+
+p1 = Pessoa('123.456.789-10', 'Bissexto')
+print(p1.get_total_pessoas()) #erro
+print(Pessoa.get_total_pessoas(p1)) #OK
+``` 
+Métodos
+```Python
+from datetime import datetime
+class Pessoa:
+  def __init__(self,cpf,nome, data_nascimento):
+    d, m, a = data_nascimento.split("/")
+    self.cpf = cpf
+    self.nome = nome
+    self.data_nascimento = datetime(a,m,d)
+
+  def get_data_nascimento(self):
+    return self.data_nascimento.strftime("%x")
+```
+Construtores 
+```Python
+class Medicamento:
+  def __init__(self, nome):
+    self.nome = nome
+```
+Destrutores  
+```Python
+class A: 
+  def __del__(self):
+    print("A has been destroyed")
+```
+
+
