@@ -434,6 +434,74 @@ Garbage Collection em Java
 ## <a name="reo3aula2"></a> **Paradigma Orientado a Objetos : Encapsulamento**  
 [Video Aula](https://youtu.be/thvtKowe85E)  
 
+Na programação Orientada a Objetos, é desejável e, muitas vezes, muito importante, que os atributos dos objetos tenham o devido nível e forma de acesso externo ao objeto.  
+Para isso, é necessário definir a visibilidade dos atributos e métodos de um objeto.  
+Como 'dono' dos atributos, um objeto é o mais indicado para lidar com seus atributos e métodos e não o cenário externo, como outros objetos.  
+O encapsulamento permite maior controle e validação dos dados de um objeto  
+
+### Encapsulamento  
+É importante evitar que atributos de uma classe sejam diretamente acessíveis de fora da classe.
+```Python 
+class Conta:
+  def __init__(self):
+    self.saldo = 0
+
+c1 = Conta()
+c1.saldo = 100000
+```  
+![Atributos](img/EncapsulamentoAtributoVisivel.png)
+Para acessar esses atributos, métodos são definidos   
+  * permitem maior controle dos valores, como validação dos dados
+
+### **Visibilidade**  
+A visibilidade é utilizada para indicar o nível de acesso de um determinado atributo ou método;  
+Os três modos distintos são:  
+  * Público:
+    * Objetos de quaisquer classes podem ter acesso a atributos, ou métodos, públicos;
+  * Privado:
+    * Apenas a classe que define atributos ou métodos privados pode ter acesso a eles;
+  * Protegido:
+    * Apenas a classe e suas subclasses podem ter acesso a atributos e métodos protegidos;
+
+![Atributos](img/EncapsulamentoAtributoPrivadoPython.png)
+![Atributos](img/EncapsulamentoAtributosPython.png)
+
+Em Python é possível definir atributos, no momento da execução: 
+![Atributos](img/EncapsulamentoDefinindoAtributosPython.png)
+![Atributos](img/EncapsulamentoDefinindoAtributosPython2.png)
+
+### **Getters e Setters**  
+São métodos específicos para acesso aos atributos de uma classe, principalmente os atributos privado.  
+Como padrão na comunidade de programadores, são nomeados com os prefixos 'ser_' ou 'get_' para ajustar ou obter os valores dos atributos.  
+Permitem validação e formatação dos valores dos atributos antes de serem acessados ou alterados fora do objeto.  
+São métodos, geralmente, públicos  
+
+### **Troca de Mensagens**  
+Na Orientação a Objetos, os objetos interagem pela troca de mensagens, e, nesse contexto, os métodos getters e setters desempenham papel importante e frequente. 
+<h3 align="center"><em>Cada objeto sabe os atributos que têm e, portanto, têm métodos para alterá-los adequadamente</em></h3>  
+
+### **Padrões de Projeto de SOftware**
+Sáo soluções gerai para problemas que ocorrem com frequência na programação.  
+Um desses padrões é chamado *'Decorator'*
+  * Esse padrão adiciona comportamento a um método ou objeto em tempo de execução.
+
+No python: 
+**Decorators** @property e @attr.setter  
+**@property** decora os métodos getters  
+**@attribute_name.setter**, os métodos setters  
+Não se utiliza os prefixos 'get_' e 'set_'  
+Os métodos têm o nome do atributo a ser manipulado   
+  * Polimorfismo
+
+![Decorators](img/EncapsulamentoPropertyAndSetter.png)
+
+**Decorator**  
+**@classmethod** define métodos de classe  
+@classmethod recebe uma referência à classe (geralmente chamado de cls) como primeiro parâmetro implícito (semelhante ao self, referência ao objeto)  
+
+![Decorators](img/EncapsulamentoClassMethod.png)
+
+
 
 
 ****
@@ -477,6 +545,8 @@ p1 = Pessoa('123.456.789-10', 'Bissexto')
 print(p1.get_total_pessoas()) #erro
 print(Pessoa.get_total_pessoas(p1)) #OK
 ``` 
+> 1  
+
 Métodos
 ```Python
 from datetime import datetime
@@ -501,6 +571,60 @@ Destrutores
 class A: 
   def __del__(self):
     print("A has been destroyed")
+
+minhaClasse = A()
+del minhaClasse
+```
+> A has been destroyed
+
+
+Visibilidade de atributos 
+```Python
+class A(): 
+  def__init__(self):
+    self.__priv = "I am private"
+    self._prot = "I am protected"
+    self.pub = "I am public"
 ```
 
+Limitanto os atributos 
+```Python
+class Conta:
+  _slots__=('_Conta__saldo')
+  def __init__(self): 
+    self.__saldo = 0 
 
+c1 = Conta()
+c1.new_saldo = 100000 #Erro
+c1._Conta__saldo = 100000 #permitido
+```
+Decorators 
+```Python
+class Conta: 
+  _slots__ = ('_Conta__saldo')
+  def __init__(self): 
+    self.__saldo = 0  
+  @property  
+  def saldo(self):
+    return 'R$ {0:.2f}'.format(self.__saldo)
+  @saldo.setter 
+  def saldo(self, novo_saldo):
+    if novo_saldo > 0:
+      self.__saldo = novo_saldo
+    else:
+      raise Exception()
+  @classmethod 
+  def contas_instanciadas(cls):
+    return '{} contas ativas'.format(cls.__contas)
+
+c1 = Conta()
+c1.saldo = 100 # chama setter  
+c1.saldo  # chama getter
+# R$ 100     
+c1.saldo = -100 #Exception
+print(Conta.contas_instanciadas()) 
+c2 = Conta()
+print(c2.contas_instanciadas()) 
+```
+> 1 contas ativas  
+> 2 contas ativas 
