@@ -480,7 +480,7 @@ São métodos, geralmente, públicos
 Na Orientação a Objetos, os objetos interagem pela troca de mensagens, e, nesse contexto, os métodos getters e setters desempenham papel importante e frequente. 
 <h3 align="center"><em>Cada objeto sabe os atributos que têm e, portanto, têm métodos para alterá-los adequadamente</em></h3>  
 
-### **Padrões de Projeto de SOftware**
+### **Padrões de Projeto de Software**
 Sáo soluções gerai para problemas que ocorrem com frequência na programação.  
 Um desses padrões é chamado *'Decorator'*
   * Esse padrão adiciona comportamento a um método ou objeto em tempo de execução.
@@ -507,6 +507,103 @@ Os métodos têm o nome do atributo a ser manipulado
 ****
 
 ## <a name="reo3aula3"></a> **Paradigma Orientado a Objetos : Herança e Composição**
+
+### **HERANÇA OO**  
+Mecanismo que permite que características comuns a diversas classes sejam organizadas em uma classe base e que, a partir dessa, outras possam ser criadas, herdando a classe base. 
+<div align="center"><img src="img/herancaOO.png"/></div>  
+
+A classe derivada (ou subclasse) mantém as características herdadas e acrescenta o que for de sua exclusividade. 
+<div align="center"><img src="img/herancaOOjava.png"/></div>
+
+A classe derivada (ou subclasse) mantém as características herdadas e acrescenta o que for de sua exclusividade.  
+<p align="center">Python</p>
+
+```Python 
+class Pessoa: 
+  def__init__(self,nome):
+    self.nome = nome
+  
+class Paciente(Pessoa):
+  def __init__(self,nome, med_id):
+    super().__init__(nome)
+    self.med_id = med_id
+
+class Medico(Pessoa):
+  def __init__(self,nome,id_func):
+    super().__init__(nome)
+    self.id_func = id_func
+```
+<div align="center"><img src="img/herancaOOpython.png"/></div>
+
+### **CLASSE ABSTRATA**
+Uma classe abstrata contém métodos abstratos, ou seja, que não têm implementação  
+As classes que herdarem a classe abstrata são obrigados a realizar a implementação dos métodos abstratos da classe abstrata  
+Uma classe abstrata, com métodos abstratos não pode ser diretamente instanciada  
+<div align="center"><img src="img/herancaOOclasseAbstrata.png"/></div>
+<div align="center"><img src="img/herancaOOclasseAbstrata2.png"/></div>
+
+### **DUCK TYPING**  
+Estilo de codificação, em linguagens dinamicamente tipadas, em que define-se classes e métodos sem se importar com o tipo das variáveis.  
+<p align="center">Importa-se com o comportamento, não com o tipo</p>
+<p align="center">se anda como pato, nada como um pato e faz quack como um pato, então provavelmente é um pato</p>
+
+Por ser uma linguagem não tipada, ou seja, não se define o tipo das variáveis, os argumentos de métodos não são tipados e podem receber qualquer tipo de dados.   
+Obviamente, as expressão com tais argumentos devem envolver operadores que consigam lidar com os valores fornecidos.  
+Para se certificar que uma variável é um tipo esperado, o Python fornece algumas funções úteis: 
+  * **type()** recebe como parâmetro uma variável e retorna o tipo da mesma
+  * **isinstance()** recebe dois parâmetros: variável e tipo esperado. Retorna True se a variável é do tipo indicado e False caso contrário
+
+```Python
+class A: 
+  pass
+
+>> a = A()
+
+>> isinstance(a,A)
+True
+
+>> type(a)
+<class '__main__.A'>
+```
+
+### **HERANÇA MÚLTIPLA**  
+Uma classe pode herdar de mais de uma classe seus atributos e métodos  
+Java não suporta  
+C++ e Python suportam herança múltipla  
+
+<div align="center"><img src="img/herancaOOmúltiplaClock.png"/></div>
+<div align="center"><img src="img/herancaOOmúltiplaCalendar.png"/></div>
+<div align="center"><img src="img/herancaOOmúltiplaCalendarClock.png"/></div>
+
+
+### **PROBLEMA DO DIAMANTE**  
+O problema do Diamante (devido à forma geométrica da ilustração ao lado) pode ocorrer na herança múltipla  
+
+```Python  
+class A:
+  def m(self):
+    print("m of A called")
+class B(A):
+  def m(self):
+    print("m of B called")
+class C(A): 
+  def m(self):
+    print("m of C called")
+
+class D(B,C):
+  pass
+```
+
+Considere as classes A, B, C e D, a cima, o que acontece no seguinte trecho do código? 
+```Python
+d = D()
+d.m()
+```
+<span style="color: orange;">Qual método m() será invocado, da classe A,B ou C?</span>   
+A resolução da ambiguidade depende da MRO (MethodResolutionOrder) de cada linguagem  
+Leia em https://www.python.org/download/releases/2.3/mro/ADBC
+
+
 
 ****
 
@@ -627,4 +724,21 @@ c2 = Conta()
 print(c2.contas_instanciadas()) 
 ```
 > 1 contas ativas  
-> 2 contas ativas 
+> 2 contas ativas   
+
+Herança em OO  
+```Python 
+class Pessoa: 
+  def__init__(self,nome):
+    self.nome = nome
+  
+class Paciente(Pessoa):
+  def __init__(self,nome, med_id):
+    super().__init__(nome)
+    self.med_id = med_id
+
+class Medico(Pessoa):
+  def __init__(self,nome,id_func):
+    super().__init__(nome)
+    self.id_func = id_func
+```
