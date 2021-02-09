@@ -609,6 +609,42 @@ Leia em https://www.python.org/download/releases/2.3/mro/ADBC
 
 ## <a name="reo3aula4"></a> **Paradigma Orientado a Objetos : Polimorfismo**
 
+[Video aula](https://youtu.be/L5VFek5PDEg)
+
+Habilidade de apresentar a mesma interface para formas diferentes, tipos diferentes de dados
+  * Por exemplo, métodos polimórficos podem aceitar tipos de dados diferentes e, dependendo dos mesmos ter comportamentos diferentes;
+
+<div align="center"><img src="img/polimorfismo1.png"/></div>
+<div align="center"><img src="img/polimorfismo2.png"/></div>
+
+### **Sobrescrita, sobrecarga, substituição**  
+Relacionadas ao polimorfismo, temos algumas variações são bem similares, veja:  
+  * **Sobrescrita**: Método com mesmo nome, quantidade de parâmetros (e/ou tipos de parâmetros)
+  * **Sobrecarga**: Método com mesmo nome, mas quantidade e tipos de parâmetros diferentes
+  * **Substituição**: Quando uma subclasse reescreve um método definido na superclasse
+
+### **Sobrecarga**  
+O mecanismo chamado de sobrecarga (*overloading*) é utilizado quando se deseja que dois métodos de uma mesma classe possam ter o mesmo nome, desde que suas listas de parâmetros sejam diferentes, constituindo assim uma assinatura diferente de cada método.  
+A sobrecarga não gera conflito pois o compilador é capaz de detectar qual método deve ser escolhido a partir da análise dos tipos de argumentos do método.  
+A sobrecarga é uma aplicação do polimorfismo na Orientação a Objetos.  
+<div align="center"><img src="img/polimorfismoSobrecarga.png"/></div>
+
+**Métodos *mágicos*, em Python**  
+Em Python, um inteiro, ponto-flutuante, string, lista, dicionários, etc. São tratados como objetos. Inclusive, essas 'classes base' podem ser herdadas, como veremos mais adiante.  
+Portanto, vários operadores pode ser sobrecarregados para operar em todos esses tipos de dados e, inclusive, sobre objetos criados por um programador.  
+Isso é feito através dos métodos mágicos.  
+Veja a tabela a seguir, que lista os operadores, tanto aritméticos quanto lógicos, e seus respectivos métodos mágicos para sobrecarga.
+<div align="center"><img src="img/polimorfismoSobrecargaMetodosMagicos.png"/></div>
+<div align="center"><img src="img/polimorfismoSobrecarga2.png"/></div>
+<div align="center"><img src="img/polimorfismoSobrecarga3.png"/></div>
+<div align="center"><img src="img/polimorfismoSobrecarga4.png"/></div>
+
+<div align="center"><img src="img/polimorfismo3.png"/></div>
+<div align="center"><img src="img/polimorfismo4.png"/></div>
+<div align="center"><img src="img/polimorfismo5.png"/></div>
+<div align="center"><img src="img/polimorfismo6.png"/></div>
+<div align="center"><img src="img/polimorfismo7.png"/></div>
+<div align="center"><img src="img/polimorfismo8.png"/></div>
 ****
 
 ## <a name="reo3Python"></a> **Paradigma Orientado a Objetos : Python**
