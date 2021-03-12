@@ -6,9 +6,10 @@ Repositório para salvar códigos de PLP
 
 - [REO 2 - Paradigma Imperativo](#paradigmaimperativo)
 - [REO 3 - Paradigma Orientado a Objetos](#paradigmaOrientadoAObjetos)
+- [REO 4 - Paradigma Funcional](#paradigmaFuncional)
 
 
-## <h1><a name = "paradigmaimperativo">🐍 Reo 2 - Paradigma Imperativo</a></h1> 
+<h1><a name = "paradigmaimperativo">🐍 Reo 2 - Paradigma Imperativo</a></h1> 
 <!--ts-->
   * [Configurações](#reo2Configurações)
     * [Ambiente virtual](#ambienteVirtualPython)
@@ -778,3 +779,211 @@ class Medico(Pessoa):
     super().__init__(nome)
     self.id_func = id_func
 ```
+***
+
+<h1><a name = "paradigmaFuncional"> Reo 4 - Paradigma Funcional
+</a></h1> 
+
+* Aulas 
+  * [Aula 1 - Paradigma Funcional : Introdução](#paradigmaFuncionalAula1)
+  * [Haskell](#paradigmaFuncionalHaskell)
+
+* [Atividade Avaliativa](#paradigmaFuncionalAtividadeAvaliativa)
+
+
+<a name = "paradigmaFuncionalAula1"></a>
+
+## **Paradigma Funcional : Introdução**
+[video-aula](https://youtu.be/1NNTy7X9Q18)
+
+<center style="margin: 40px 0 20px 0;">
+
+## **Introdução**
+
+</center>
+
+O paradigma funcional trata a computação como avaliação de funções matemáticas.  
+
+Esse estilo de programação é suportado por linguagens de programação funcional, ou linguagens aplicativas.  
+
+Linguagens funcionais possuem alto nível de abstração e estilo declarativo: especifica-se o que deve ser computado ao invés de como.  
+
+Alguns exemplos de linguagens funcionais: LISP, Scheme, ML e Haskell.2
+
+<center style="margin: 10px 0 10px 0;">
+
+  ![Linguagens](img/paradigmaFuncionalLinguagens.png)
+
+</center>
+
+
+<center style="margin: 40px 0 20px 0;">
+
+## **Funções matemáticas**
+
+</center>
+
+Uma função matemática é um mapeamento de membros de um conjunto, chamado de conjunto **domínio**, para outro, chamado de conjunto **imagem**.  
+
+As funções são geralmente aplicadas a um elemento em particular do conjunto domínio, fornecido como um **parâmetro** para a função.  
+
+Uma função leva a, ou retorna, um elemento do conjunto imagem.  
+
+Em funções matemáticas, a ordem de avaliação de suas expressões de mapeamento é controlada por recursão e expressões condicionais, e não por sequência e repetição iterativa, como nas linguagens imperativas
+
+<center>
+
+  ![Linguagens](img/paradigmaFuncionalFunçõesMatemáticas.png)
+  ![Linguagens](img/paradigmaFuncionalFunçõesMatemáticas2.png)
+
+</center>
+
+<center style="margin: 40px 0 20px 0;">
+
+## **Fundamentos da Programação Funcional - I**
+
+</center>
+
+O objetivo do projeto de uma linguagem de programação funcional é **mimetizar funções matemáticas ao máximo possível**.  
+
+Em uma linguagem imperativa, uma expressão é avaliada e o resultado é armazenado em uma **posição de memória**, representada como uma variável em um programa.   
+
+Uma linguagem de **programação puramente funcional não usa variáveis**, nem sentenças de atribuição. Sem variáveis, as construções de iteração não são possíveis, já que elas são controladas por variáveis
+
+
+<center style="margin: 40px 0 20px 0;">
+
+## **Fundamentos da Programação Funcional - II**
+
+</center>
+
+Na programação funcional, as repetições devem ser especificadas com recursão em vez de estruturas de repetição.  
+
+Uma linguagem funcional fornece:  
+
+* um conjunto de **funções primitivas**; 
+* um conjunto de **formas funcionais** para construir funções complexas a partir das funções primitivas; 
+* uma **operação de aplicação de função**; 
+* alguma estrutura ou **estruturas para representar dados**
+
+
+<center style="margin: 40px 0 20px 0;">
+
+## **Transparência Referencial**
+
+</center>
+
+Programa funcional não tem ’estado’  
+Não tem atribuição: o programador não precisa se preocupar com variáveis  
+
+Dada uma função, podemos substituí-la por seu valor de retorno sem causar impacto na aplicação
+
+O resultado de uma função é determinado unicamente por seus valores de entrada. Coisa alguma fora da função pode afetar a sua saída.  
+
+<center style="font-size: 15px;">
+Isso é não tem efeito colateral!!
+</center>
+
+<center style="margin: 40px 0 20px 0;">
+
+## **Uso da recursão**
+
+</center>
+
+Principal causa da perda de performance, pois é computacionalmente caro realizar a recursão.  
+
+Se recursão for *de cauda* interpretador por mudar para iteração. 
+
+<center style="font-size: 15px;color: darkorange;font-weight: 600;">
+Pesquise o que significa recursão de cauda
+</center>
+
+<center style="font-size: 15px;">
+
+Indicado é sempre tentar **recursão de cauda**
+
+</center>
+
+<center style="margin: 40px 0 20px 0;">
+
+## **Funções Simples**
+
+</center>
+
+```Haskell
+cube(x) ≡ x * x *x, x ∈ ℝ
+cube: ℝ → ℝ
+```
+
+<center>
+
+  ![Funções Simples](img/paradigmaFuncionalFunçõesSimples.png)
+
+</center>
+
+<center style="margin: 40px 0 20px 0;">
+
+## **Funções Lambda**
+
+</center>
+
+Alonzo Church, 1941, especificou funções não nomeadas
+
+```Haskell
+λ(x)𝑥∗𝑥∗𝑥
+(λ(x)𝑥∗𝑥∗𝑥(2)
+```
+Resulta em 8
+
+<center>
+
+  ![Funções Lambda](img/paradigmaFuncionalFunçõesLambda.png)
+
+</center>
+
+<center>
+
+## **Formas Funcionais**
+
+</center>
+
+Nem tudo se resolve com funções simples, como a função cubo. Então, as linguagens funcionais permitem as funções de ordem superior. Exemplos:
+* Composição de funções
+* Aplicar-a-todos
+
+
+### **Composição de funções**
+
+
+```Haskell
+ℎ ≡ 𝑓°𝑔
+
+𝑓(𝑥) ≡ 𝑥+2
+𝑔(𝑥) ≡ 3∗𝑥
+
+ℎ(𝑥) ≡ 𝑓(𝑔(𝑥))
+ℎ(𝑥) ≡ (3∗𝑥)+2
+```
+
+<center>
+
+  ![Funções Lambda](img/paradigmaFuncionalComposiçãoDeFunções.png)
+
+</center>
+
+
+### **Aplicar a todos**
+
+Denotada como α recebe uma única função como parâmetro e uma lista de argumentos
+
+```Haskell
+𝑓(𝑥) ≡ 𝑥∗𝑥
+α(𝑓,(2,3,4))
+```
+Resulta em (4,9,16)
+
+
+<a name = "paradigmaFuncionalAtividadeAvaliativa"></a>
+
+## **Atividade Avaliativa**
+[Paradigma Funcional : Exemplos em Haskell](https://youtu.be/NKQUtbwHrMo)
