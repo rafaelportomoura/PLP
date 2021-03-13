@@ -1229,5 +1229,42 @@ Evita que um parâmetro seja avaliado
 * `(QUOTE (A B C))`
   * `(A B C)
 
+
+### **Scheme: Funções de lista**
+
+`CONS` é um construtor de listas. Constrói a partir de dois argumentos
+
+Geralmente insere o primeiro argumento como `CAR` do segundo argumento, geralmente uma lista (CDR)
+
+<center>
+  <img src="img/paradigmaFuncionalFunçõesDeLista.png" />
+</center>
+
+### **Scheme: Funções de PREDICADO**
+
+* ```(EQ? `A `A)```
+  * Retorna #T
+* ```(EQ? `A `B)```
+  * Retorna #F
+* ```(LIST? `(X,Y))```
+  * Retorna #T
+* ```(LIST? `X)```
+  * Retorna #F
+* ```(NULL? `(A,B))```
+  * Retorna #F
+* ```(NULL? `())```
+  * Retorna #T
+
+
+<center>
+  <img src="img/paradigmaFuncionalSchemeOutrosExemplos.png" />
+  <img src="img/paradigmaFuncionalRecursaoDeCauda.png" />
+  <img src="img/paradigmaFuncional&Imperativa.png" />
+</center>
+
+
 ## **Atividade Avaliativa**
+[Paradigma Funcional : Haskell](https://youtu.be/pDBRUzhwDFk)
 [Paradigma Funcional : Exemplos em Haskell](https://youtu.be/NKQUtbwHrMo)
+
+[Learn Haskell](http://learnyouahaskell.com/chapters)
