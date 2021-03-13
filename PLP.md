@@ -985,5 +985,248 @@ Resulta em (4,9,16)
 
 <a name = "paradigmaFuncionalAtividadeAvaliativa"></a>
 
+
+<center style="margin: 40px 0 20px 0;">
+
+## **A primeira linguagem funcional**
+
+</center>
+
+LISP está para Fortran, como Funcional está para Imperativo, no histórico das linguagens de programação
+
+Mas, inclui recursos imperativos: variáveis e, portanto, não pode ser considerada uma linguagem puramente funcional
+
+### **LISP: Tipos e Estruturas de dados**
+
+Em LISP, os dados podem ser:  
+◇Átomos, ou  
+◇Listas 
+* Desprovidos de tipos  
+
+◇Exemplos de Listas em LISP
+* (A BC D)
+* (A (BC) D(E (FG)))
+
+### **LISP: Primeiro interpretador**
+
+LISP usa a Notação-M que foi definida para a linguagem FORTRAN
+* Notação-M para linguagem de máquina (máquina IBM 704)  
+ 
+Função EVAL é o Interpretador LISP, definido em 1965
+* Tem grande relação com o estudo da computabilidade, que vocês estudarão na disciplina Teoria da Computação
+
+Convenção Cambridge Polonesa definia a seguinte sintaxe para os comandos LISP
+```LISP
+(nome_funcao param_1 ... param_n)
+(+ 5 7)
+(nome_funcao(LAMBDA(arg_1, ..., arg_n) expressao))
+```
+
+### **Scheme**
+
+É um dialeto de LISP, surgiu no MIT em 1970, com as seguintes vantagens:
+* Tamanho pequeno
+* Escopo estático
+* Sintaxe simples
+* Bom para fins didáticos
+
+### **Scheme: Interpretador**
+
+Laço infinito de leitura-avaliação-escrita: Lê o comando, faz a sua avaliação (execução) e retorna o resultado
+
+Isso é feito pela função EVAL 
+1. Cada expressão de parâmetro é avaliada 
+2. Função primitiva é aplicada aos parâmetros 
+3. Valor resultante é mostrado
+
+### **Scheme: Funções Numéricas Primitivas**
+
+* +, -, /, e * são os operadores aritméticos
+* \* -> 1 (se inserir apenas o operador *, Schemeretorna 1)
+* \+ -> 0 (se inserir apenas o +, retorna 0, porque?)
+* Considere os seguintes comandos e retornos:   
+  * (* 3 7) retorna 21  
+  * (-15 7 2)retorna 6  
+  * (-24 (* 4 3))retorna 12
+
+### **Scheme: definição de funções**
+
+Baseado na notação LAMBDA
+
+* `(LAMBDA(x)(* x x))`
+* `((LAMBDA(x)(* x x))7)`
+  * Resulta em 49
+  * x é variável vinculada e nunca muda na expressão
+
+* DEFINE é utilizado para vincular nome a um valor ou expressão
+  * Não define variável!
+  * Pode criar constante
+* `(DEFINE símbolo expressão)`  
+* `(DEFINE pi 3.14159)`  
+* `(DEFINE two_pi(* 2 pi))`
+
+### **Scheme: Função de saída**
+* `(DISPLAY expressão)`
+  * Como o print do Python
+* `(NEWLINE)`
+
+### **Scheme: Predicado numérico**
+
+<div style="margin: 20px 0 20px 0;display: flex; flex-direction: row;justify-content: center;">
+
+  <div style="padding-top: 100px;margin-right: 50px;">
+    <h3>Retorna valor<br>booleano:<br>◇#T<br>◇#F</h3>
+  </div>
+
+  <table width="50%" >
+    <tr>
+      <th style="background: black; color: white;border: 1px solid rgb(155,155,155);">
+        Função
+      </th>
+      <th style="background: black; color: white;border: 1px solid rgb(155,155,155);">
+        Significado
+      </th>
+    </tr>
+    <tr>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        =
+      </td>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        Igual
+      </td>
+    </tr>
+    <tr>
+      <td style="background: white; color: black ;border: 1px solid rgb(155,155,155);">
+        <>
+      </td>
+      <td style="background: white; color: black ;border: 1px solid rgb(155,155,155);">
+        Diferente
+      </td>
+    </tr>
+    <tr>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        >
+      </td>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        Maior que
+      </td>
+    </tr>
+    <tr>
+      <td style="background: white; color: black ;border: 1px solid rgb(155,155,155);">
+        <
+      </td>
+      <td style="background: white; color: black ;border: 1px solid rgb(155,155,155);">
+        Menor que
+      </td>
+    </tr>
+    <tr>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        >=
+      </td>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        Maior ou igual a
+      </td>
+    </tr>
+    <tr>
+      <td style="background: white; color: black ;border: 1px solid rgb(155,155,155);">
+        <=
+      </td>
+      <td style="background: white; color: black ;border: 1px solid rgb(155,155,155);">
+        Menor ou igual a
+      </td>
+    </tr>
+    <tr>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        EVEN?
+      </td>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        É numero par?
+      </td>
+    </tr>
+    <tr>
+      <td style="background: white; color: black ;border: 1px solid rgb(155,155,155);">
+        ODD?
+      </td>
+      <td style="background: white; color: black ;border: 1px solid rgb(155,155,155);">
+        É número ímpar?
+      </td>
+    </tr>
+    <tr>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        ZERO?
+      </td>
+      <td style="background: rgb(200,200,200); color: black ;border: 1px solid rgb(155,155,155);">
+        É zero?
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+### **Scheme: Controle de fluxo**
+
+<div style="display: flex;flex-direction: row;margin-bottom: 20px;">
+
+  <div align="center" style="background: rgb(255,249,204); height: 80px;padding-top: 11px;border: 2px solid rgb(244,219,7); margin-right: 20px;margin-top: 30px;">
+    Exemplo da<br>função factorial,<br>em Scheme
+  </div>
+
+```Scheme
+(IF predicado expressão_ então expressão_senão)
+(DEFINE (factorial n)
+  (IF (= n0)
+    1
+    (* n(factorial(- n 1)))))
+  )
+)
+```
+
+</div>
+
+
+### **Scheme: Funções de lista**
+
+<div style="display: flex;flex-direction: row;margin-bottom: 20px;margin-top: 10px;">
+
+  <div align="center" style="background: rgb(255,249,204);min-width: 100px;height: 115px;padding-top: 5px;border: 2px solid rgb(244,219,7); margin-right: 20px;margin-top: 30px;font-size: 14px;line-height: 15px">
+
+  `DEFINE`<br>Retorna o<br>segundo,<br>elemento da<br>lista `lst`<br>Consegue ver<br> isso?
+  </div>
+
+  <div>
+
+  Uso principal das primeiras linguagens funcionais foi o processamento de listas   
+  Então a linguagem tem *seletores* para listas:  
+  * `CAR`: retorna o primeiro elemento da lista
+  * `CDR`: retorna a lista menos o primeiro elemento
+  * `(DEFINE (second lst) (CAR (CDR lst)))`
+  
+  </div>
+
+</div>
+
+### **Scheme: QUOTE**
+
+Evita que um parâmetro seja avaliado
+
+<div style="display: flex;flex-direction: row;margin-bottom: 20px;margin-top: 10px;">
+
+
+  <div>
+
+  * `(QUOTE A)`
+    * `A
+  </div>
+
+  <div align="center" style="background: rgb(255,249,204);min-width: 110px;height: 62px;padding-top: 10px;border: 2px solid rgb(244,219,7); margin-LEFT: 20px;font-size: 14px;line-height: 15px">
+
+  Retorna A, sem<br>saber o que A<br>seja
+  </div>
+
+</div>
+
+* `(QUOTE (A B C))`
+  * `(A B C)
+
 ## **Atividade Avaliativa**
 [Paradigma Funcional : Exemplos em Haskell](https://youtu.be/NKQUtbwHrMo)
