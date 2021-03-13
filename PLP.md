@@ -11,6 +11,7 @@ Repositório para salvar códigos de PLP
 
 <h1><a name = "paradigmaimperativo">🐍 Reo 2 - Paradigma Imperativo</a></h1> 
 <!--ts-->
+
   * [Configurações](#reo2Configurações)
     * [Ambiente virtual](#ambienteVirtualPython)
     * [Extensões para VsCode](#extensoesParaVsCodePython)
