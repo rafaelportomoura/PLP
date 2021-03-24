@@ -1,0 +1,39 @@
+﻿f:/GIT/PLP/REO 5 - Paradigma Lógico/Atividade Avaliativa/genealogy.pl
+
+consult('f:/GIT/PLP/REO 5 - Paradigma Lógico/Atividade Avaliativa/genealogy.pl').  
+
+
+______________________________________________________________________
+
+all_ancestors(X) :- 
+    parent(Y,X),
+    write(Y),
+    nl,
+    all_ancestor(Y).
+
+______________________________________________________________________
+
+all_ancestors(X) :- 
+    parent(Y,X),
+    write(Y).
+
+
+all_ancestors(X) :- 
+    parent(Y,X),
+    all_ancestors(Y).
+    
+______________________________________________________________________
+
+
+all_ancestors(X) :- 
+    parent(Y,X),
+    all_ancestors(Y),
+    parent(Y,X),
+    write(Y),
+    nl,
+    isFather(X).
+
+
+isFather(X) :-
+    \+ parent(X,_),
+    !.

@@ -1,0 +1,12 @@
+{
+    "editor.defaultFormatter": "arthurwang.vsc-prolog",
+    "prolog.executablePath": "C:/Program Files/swipl/bin/swipl.exe",
+    "prolog.format.enabled": true,
+    "prolog.format.insertSpaces": true,
+    "prolog.dialect": "swi",
+    "prolog.linter.run": "onType",
+    "prolog.terminal.runtimeArgs": [
+        "all_ancestors(quitim)."
+    ],
+
+}

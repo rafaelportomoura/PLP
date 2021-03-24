@@ -1,4 +1,6 @@
-﻿parent(jafe, gomer).
+﻿parent(tardeli, jafe).
+
+parent(jafe, gomer).
 parent(jafe, magoge).
 parent(jafe, madai).
 parent(jafe, javan).
@@ -31,9 +33,23 @@ parent(misraim, causulim).
 parent(raama, seba).
 parent(raama, deda).
 
-
-all_ancestor(X) :- 
-    parent(Y,X),
-    write(Y),
+/* all_son(X) :-
+    parent(X,Y),
+    write(X),
     nl,
-    all_ancestor(Y).
+    all_son(Y). */
+
+
+
+all_ancestors(X) :-
+    \+ parent(_,X),
+    !.
+
+    
+    
+
+all_ancestors(X) :- 
+    parent(Y,X),
+    all_ancestors(Y),
+    write(Y),
+    nl.
