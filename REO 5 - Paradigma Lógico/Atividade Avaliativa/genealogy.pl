@@ -31,57 +31,6 @@ parent(misraim, causulim).
 parent(raama, seba).
 parent(raama, deda).
 
-father(jafe). 
-father(gomer).
-father(javan).
-father(cao).
-father(cuxe).
-father(misraim).
-father(raama).
-
-/* 
-
-son(gomer).
-son(magoge).
-son(madai).
-son(javan).
-son(tubal).
-son(meseque).
-son(tiras).
-son(asquenaz).
-son(rifate).
-son(togarma).
-son(eliza).
-son(tarsis).
-son(quitim).
-son(dodaim).
-son(misraim).
-son(pute).
-son(canaa).
-son(ninrode).
-son(seba).
-son(havila).
-son(sabta).
-son(raama).
-son(sabteca).
-son(ludim).
-son(leabim).
-son(naftum).
-son(patrusim).
-son(causulim).
-son(deda). 
-
-
-
-all_ancestor(X) :- 
-    son(X),
-    father(Y),
-    parent(Y,X),
-    Y \== X,
-    write(Y),
-    nl,
-    all_ancestor(Y). */
-
 
 all_ancestor(X) :- 
     parent(Y,X),
