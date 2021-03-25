@@ -1,6 +1,4 @@
-﻿
-
-parent(jafe,    gomer).
+﻿parent(jafe,    gomer).
 parent(jafe,    magoge).
 parent(jafe,    madai).
 parent(jafe,    javan).
